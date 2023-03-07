@@ -4,3 +4,4 @@ pandas
 numpy 
 matplotlib
 seaborn
+scikit-learn==0.23.2
