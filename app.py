@@ -1,11 +1,7 @@
 import pickle
-import json
 from flask import Flask,request,app,jsonify,url_for,render_template
 import numpy as np
-import pandas as pd
-import sys
-import joblib
-from joblib import load
+
 
 
 app=Flask(__name__)
@@ -15,9 +11,11 @@ app=Flask(__name__)
 #with open('regmodel.pkl','rb') as fs:
   #  regmodel=pickle.load(fs)
 
-#regmodel=pickle.load(open('regmodel.pkl','rb'))
-regmodel=load('reg.joblib')
-#scalar=pickle.load(open('scaling.pkl','rb'))
+new_model=open('regmodel.pkl','rb')
+
+regmodel=pickle.load(new_model)
+#regmodel=load('reg.joblib')
+scalar=pickle.load(open('scaling.pkl','rb'))
 
 @app.route('/')
 def home():
